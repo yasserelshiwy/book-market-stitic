@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark</title>
+    <!-- !####icon title -->
+    <link rel="icon" href="./assets/image/bookmark.png" />
+    <!-- *#####googlefont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <!-- !!!!!!fontasome -->
+    <link rel="stylesheet" href="./assets/css/all.min.css" />
+    <!-- ^^^^^bootdstrap -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <!-- *#####stylesheet -->
+    <link rel="stylesheet" href="./assets/css/masster.css" />
+    <!-- ~#####media -->
+    <link rel="stylesheet" href="./assets/css/media.css" />
+  </head>
+  <body>
+    <section>
+      <div class="bookmark py-5 position-relative">
+        <div class="container px-2">
+          <div class="title text-center w-fit m-auto py-2">
+            <h1 class="position-relative">Bookmarker</h1>
+          </div>
+          <div class="form py-4 px-3 mt-5">
+            <h2 class="text-center h4 mb-4">
+              <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+              <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <div>
+              <div class="mb-3">
+                <label
+                  for="exampleFormControlInput1"
+                  class="form-label h6 fw-bold mb-2"
+                >
+                  <i class="fa-solid fa-book-bookmark pe-2"></i> Site
+                  Name</label
+                >
+                <input
+                  type="text"
+                  class="form-control mb-4"
+                  id="nameInput"
+                  placeholder="Bookmark Name"
+                  oninput="Validate(nameRegex,nameInpyt)"
+                />
+              </div>
+            </div>
+            <div>
+              <div class="mb-3">
+                <label
+                  for="exampleFormControlInput1"
+                  class="form-label h6 fw-bold mb-2"
+                  ><i class="fa-solid fa-link pe-2"></i>Site URL</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="urlInput"
+                  placeholder="Website URL"
+                  oninput="Validate(urlRegex,urlInpyt)"
+                />
+              </div>
+            </div>
+            <div class="d-flex justify-content-center">
+              <button
+                type="button"
+                class="btn btn-submit px-5 mt-3 text-white"
+                onclick="addBook()"
+              >
+                submit
+              </button>
+            </div>
+          </div>
+          <table class="table w-100 text-center bg-light mt-3">
+            <thead>
+              <tr>
+                <th>index</th>
+                <th>Website Name</th>
+                <th>Visit</th>
+                <th>Delete</th>
+              </tr>
+            </thead>
+            <tbody id="bookContainer"></tbody>
+          </table>
+
+          <div
+            class="inear position-absolute w-100 vh-100 d-flex justify-content-center align-items-center top-0 start-0 d-none"
+            id="inear"
+          >
+            <div
+              class="alert alert-warning alert-dismissible fade show bg-white position-absolute"
+              role="alert"
+              id="alerts"
+            >
+              <div class="exit">
+                <div class="cercl d-flex align-items-center gap-2 mt-1 mb-4">
+                  <div class="cer-1"></div>
+                  <div class="cer-2"></div>
+                  <div class="cer-3"></div>
+                </div>
+                <button
+                  type="button"
+                  class="btn-close"
+                  onclick="closeInear()"
+                ></button>
+                <p class="titel mb-4">
+                  Site Name or Url is not valid, Please follow the rules below :
+                </p>
+                <p class="v-name">
+                  <i class="fa-regular fa-circle-right p-2 text-danger"></i>
+                  Site name must contain at least 3 characters
+                </p>
+                <p class="v-url">
+                  <i class="fa-regular fa-circle-right p-2 text-danger"></i>
+                  Site URL must be a valid one
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ^####index js -->
+    <script src="./assets/js/index.js"></script>
+    <!-- !#### bootstrap js -->
+    <script src="./assets/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
